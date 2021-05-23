@@ -8,6 +8,7 @@ describe("List items", () => {
       .filter(".completed")
       .should("have.length", 1)
       .and("contain", "Eggs")
-      .find(".to");
+      .find(".toggle")
+      .should("be.checked");
   });
 });

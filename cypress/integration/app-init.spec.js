@@ -13,7 +13,7 @@ describe("App initialization", () => {
       status: 500,
       response: {},
     });
-    cy.visit("/");
+    cy.visit("localhost:3030/");
 
     cy.get(".todo-list li").should("not.exist");
 

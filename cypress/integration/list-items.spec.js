@@ -3,5 +3,11 @@ describe("List items", () => {
     cy.seedAndVisit();
   });
 
-  it.only("properly displays completed items", () => {});
+  it.only("properly displays completed items", () => {
+    cy.get(".todo-list li")
+      .filter(".completed")
+      .should("have.length", 1)
+      .and("contain", "Eggs")
+      .find(".to");
+  });
 });

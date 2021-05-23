@@ -23,6 +23,11 @@ describe("List items", () => {
       status: 200,
       response: {},
     });
-    cy.get(".todo-list li").first().find(".destroy").click({ force: true });
+
+    cy.get(".todo-list li").as("list");
+
+    cy.get("@list").first().find(".destroy").invoke("show").click();
+
+    cy.get("@list").should("have.length", 3).and("not.contain", "Milk");
   });
 });

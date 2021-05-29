@@ -12,7 +12,7 @@ export default (props) => (
         <Link to="/">All</Link>
       </li>{" "}
       <li>
-        <Link to="/active">Active</Link>
+        <Link to="/activa">Active</Link>
       </li>{" "}
       <li>
         <Link to="/completed">Completed</Link>

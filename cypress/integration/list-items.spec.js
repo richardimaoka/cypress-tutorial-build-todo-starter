@@ -25,14 +25,15 @@ describe("List items", () => {
     });
 
     cy.get(".todo-list li").as("list");
+
     cy.get("@list").first().find(".destroy").invoke("show").click();
+
     cy.get("@list").should("have.length", 3).and("not.contain", "Milk");
   });
 
   it.only("Marks an incomplete item complete", () => {
     cy.fixture("todos").then((todos) => {
       const target = Cypress._.head(todos);
-      cy.log("## dear", target);
       cy.route(
         "PUT",
         `/api/todos/${target.id}`,
